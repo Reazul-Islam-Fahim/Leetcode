@@ -1,3 +1,8 @@
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
 class Solution:
     def addTwoNumbers(self, l1, l2):
         dummy = ListNode()
@@ -6,7 +11,7 @@ class Solution:
 
         while l1 or l2 or carry:
             carry += (l1.val if l1 else 0) + (l2.val if l2 else 0)
-            current.next = ListNode(carry % 10)
+            current.next = ListNode(carry % 10) 
             current = current.next
             carry //= 10
 
